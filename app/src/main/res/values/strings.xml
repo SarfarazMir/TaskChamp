@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">TaskChamp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_icon_text">Add icon</string>
+    <string name="edit_text_hint">e.g. Go to work</string>
+    <string name="today_text">Today</string>
+    <string name="tomorrow_text">Tomorrow</string>
+    <string name="next_week_text">Next Week</string>
+    <string name="due_date_text">Due date</string>
+    <string name="flag_icon_text">Flag icon</string>
+    <string name="edit_calender_icon_text">Edit Calender icon</string>
+    <string name="up_arrow_icon_text">Up arrow icon</string>
+</resources>

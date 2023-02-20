@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+       xmlns:app="http://schemas.android.com/apk/res-auto"
+       xmlns:tools="http://schemas.android.com/tools"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       tools:context=".fragment.BottomSheetFragment"
+       app:behavior_peekHeight="10dp">
+       <EditText
+           android:id="@+id/enter_task_field"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginStart="15dp"
+           android:layout_marginEnd="15dp"
+           android:paddingTop="20dp"
+           android:paddingBottom="20dp"
+           android:hint="@string/edit_text_hint"
+           android:autofillHints=""
+           android:inputType="text" />
+
+       <LinearLayout
+           android:id="@+id/linearLayout"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@id/enter_task_field">
+           <ImageButton
+               android:id="@+id/calender_button"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/ic_baseline_edit_calendar_24"
+               android:layout_marginStart="20dp"
+               android:backgroundTint="?attr/colorSurfaceVariant"
+               android:layout_marginEnd="50dp"
+               app:tint="?attr/colorAccent"
+               android:contentDescription="@string/edit_calender_icon_text" />
+           <ImageButton
+               android:id="@+id/priority_button"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/ic_baseline_flag_24"
+               android:backgroundTint="?attr/colorSurfaceVariant"
+               android:layout_marginEnd="170dp"
+               app:tint="?attr/colorAccent"
+               android:contentDescription="@string/flag_icon_text" />
+           <ImageButton
+               android:id="@+id/save_button"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/ic_baseline_arrow_circle_up_24"
+               android:backgroundTint="?attr/colorSurfaceVariant"
+               android:contentDescription="@string/up_arrow_icon_text"
+               app:tint="?attr/colorAccent"/>
+       </LinearLayout>
+
+
+    <RadioGroup
+        android:id="@+id/priorityRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        android:layout_below="@id/linearLayout"
+        android:layout_marginTop="20dp"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/priority_radio_button_high"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="High"
+            android:textColor="@android:color/white"
+            android:background="#C91517"
+            android:paddingStart="10dp"
+            android:paddingEnd="40dp"
+            android:layout_marginStart="10dp"
+            android:buttonTint="@android:color/white"/>
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/priority_radio_button_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medium"
+            android:textColor="@android:color/white"
+            android:background="#FFA500"
+            android:paddingStart="10dp"
+            android:paddingEnd="40dp"
+            android:layout_marginStart="10dp"
+            android:buttonTint="@android:color/white"/>
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/priority_radio_button_low"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Low"
+            android:textColor="@android:color/white"
+            android:background="#FFcF00"
+            android:paddingStart="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:buttonTint="@android:color/white" />
+
+    </RadioGroup>
+
+
+    <LinearLayout
+           android:id="@+id/dueDateGroup"
+           android:layout_width="320dp"
+           android:layout_height="wrap_content"
+           android:layout_below="@id/priorityRadioGroup"
+           android:orientation="vertical"
+           android:layout_centerHorizontal="true"
+           android:visibility="gone">
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/due_date_text"
+               android:textSize="20sp"
+               android:layout_gravity="center_horizontal"
+               android:layout_marginTop="20dp"
+               android:layout_marginBottom="20dp"/>
+           <com.google.android.material.chip.Chip
+               android:id="@+id/today_chip"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               app:chipIcon="@drawable/ic_baseline_calendar_today_24"
+               app:chipIconTint="?attr/colorAccent"
+               android:text="@string/today_text"/>
+
+           <com.google.android.material.chip.Chip
+               android:id="@+id/tomorrow_chip"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               app:chipIcon="@drawable/ic_baseline_wb_sunny_24"
+               app:chipIconTint="?attr/colorAccent"
+               android:text="@string/tomorrow_text"/>
+
+           <com.google.android.material.chip.Chip
+               android:id="@+id/next_week_chip"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               app:chipIcon="@drawable/ic_baseline_next_week_24"
+               app:chipIconTint="?attr/colorAccent"
+               android:text="@string/next_week_text"/>
+
+        <CalendarView
+            android:id="@+id/calenderView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/dueDateGroup"/>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
